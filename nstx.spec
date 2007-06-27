@@ -1,7 +1,7 @@
 %define name	nstx
 %define version	1.1
 %define beta	beta6
-%define release	0.%{beta}.4mdk
+%define release	%mkrel 0.%{beta}.5
 
 Name:		%{name}
 Version:	%{version}
@@ -10,13 +10,12 @@ Summary:	Nameserver Transfer Protocol
 Group:		Networking/Other
 License:	GPL
 URL:		http://nstx.dereference.de/nstx/
-Source:		http://nstx.dereference.de/nstx/%{name}-%{version}-%{beta}.tar.bz2
+Source0:	http://nstx.dereference.de/nstx/%{name}-%{version}-%{beta}.tar.bz2
 Patch0: 	http://ftp.debian.org/debian/pool/main/n/nstx/nstx_1.1-beta6-4.diff.gz
 Source1: 	nstxd
 Source2: 	nstxd.default
 Source3: 	nstxcd
 Source4: 	nstxcd.default
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires(pre):  rpm-helper
 Requires(post): rpm-helper
 
@@ -25,15 +24,15 @@ NSTX (the Nameserver Transfer Protocol) makes it possible to create IP tunnels
 using DNS queries and replies for IP packet encapsulation where IP traffic
 other than DNS isn't possible.
 
-%package client
-Summary: Nstx (Tunnel IP over DNS)
-Group: Networking/Other
+%package	client
+Summary:	Nstx (Tunnel IP over DNS)
+Group:		Networking/Other
 
-%description client
+%description	client
 The nstx client.
 
 %prep
-%setup -n %{name}-%{version}-%{beta}
+%setup -q -n %{name}-%{version}-%{beta}
 %patch0 -p1
 
 %build
