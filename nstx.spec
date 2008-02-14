@@ -8,6 +8,7 @@ Version:	%{version}
 Release:	%{release}
 Summary:	Nameserver Transfer Protocol
 Group:		Networking/Other
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
 URL:		http://nstx.dereference.de/nstx/
 Source0:	http://nstx.dereference.de/nstx/%{name}-%{version}-%{beta}.tar.bz2
