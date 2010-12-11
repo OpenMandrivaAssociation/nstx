@@ -1,7 +1,7 @@
 %define name	nstx
 %define version	1.1
 %define beta	beta6
-%define release	%mkrel 0.%{beta}.8
+%define release	%mkrel 0.%{beta}.9
 
 Name:		%{name}
 Version:	%{version}
